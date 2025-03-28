@@ -1,0 +1,95 @@
+/* Container styling for leaderboard */
+.leaderboard-container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff4c70);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.leaderboard-container h2 {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Leaderboard list styling */
+.leaderboard-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Each leaderboard item */
+.leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s, background 0.3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.leaderboard-item:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect */
+.leaderboard-item:hover {
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Rank style */
+.leaderboard-rank {
+    color: #ffd700;
+    font-weight: bold;
+    flex: 1;
+    text-align: left;
+    font-size: 20px;
+}
+
+/* Name style */
+.leaderboard-name {
+    color: #fff;
+    flex: 2;
+    text-align: left;
+}
+
+/* Score style */
+.leaderboard-score {
+    color: #4de1ff;
+    font-weight: bold;
+    flex: 1;
+    text-align: right;
+}
+
+/* Error message styling */
+.error-text {
+    color: #ff9999;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Loading text styling */
+.leaderboard-container p {
+    font-size: 16px;
+    color: #f0f0f0;
+}
+
+/* Add a smooth scrolling effect */
+html {
+    scroll-behavior: smooth;
+}
