@@ -91,3 +91,11 @@ Variables and functions are named descriptively to indicate their purpose.
 
 ### Some Pictures :
 
+![Image](https://github.com/user-attachments/assets/1a6b29f1-6ea0-4910-b686-123cedcf02c5)
+
+![Image](https://github.com/user-attachments/assets/3d1b7092-393f-460c-85c2-702bc3d87467)
+
+![Image](https://github.com/user-attachments/assets/d29dbd48-691e-4d5b-a0c5-8dbba430774c)
+
+![Image](https://github.com/user-attachments/assets/b1333c90-ac56-43dc-8c26-ae3d3528304e)
+
