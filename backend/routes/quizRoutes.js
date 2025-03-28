@@ -53,16 +53,17 @@ router.get('/', (req, res) => {
 
 
 
-// **POST leaderboard (Submit Scores)**
+// **POST leaderboard (Submit Score)**
 router.post('/leaderboard', (req, res) => {
     const { name, score } = req.body;
 
+    // Validate input
     if (!name || score === undefined) {
         return res.status(400).json({ message: 'Name and score are required!' });
     }
 
-    // Add the new score to the leaderboard
-    leaderboard.push({ name, score });
+    // Add the new entry to the leaderboard
+    leaderboard.push({ name: name.trim(), score }); // Save the trimmed name
 
     // Sort leaderboard by score in descending order
     leaderboard.sort((a, b) => b.score - a.score);
@@ -71,9 +72,8 @@ router.post('/leaderboard', (req, res) => {
     leaderboard = leaderboard.slice(0, 10);
 
     console.log('Updated leaderboard:', leaderboard); // Debug log
-    res.status(201).json(leaderboard); // Send updated leaderboard back
+    res.status(201).json(leaderboard); // Send the updated leaderboard
 });
-
 // **GET leaderboard (Retrieve Scores)**
 router.get('/leaderboard', (req, res) => {
     try {

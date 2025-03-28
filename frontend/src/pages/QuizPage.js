@@ -11,6 +11,7 @@ const QuizPage = () => {
     const [timer, setTimer] = useState(30); // Timer set to 30 seconds
     const [leaderboard, setLeaderboard] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
+    const [userName, setUserName] = useState(''); // State for user name
 
     // Fetch quizzes on component mount
     useEffect(() => {
@@ -79,7 +80,7 @@ const QuizPage = () => {
         // Submit score to leaderboard
         try {
             const response = await axios.post('http://localhost:5000/quizzes/leaderboard', {
-                name: 'User', // Replace with actual user's name
+                name: userName.trim(), // Dynamically pass the user's name
                 score: correctAnswers,
             });
             console.log('Updated Leaderboard:', response.data);
@@ -93,6 +94,19 @@ const QuizPage = () => {
 
     return (
         <div className="quiz-container">
+            {!submitted && (
+                <div className="user-name-container">
+                    <label htmlFor="userName">Enter your name: </label>
+                    <input
+                        type="text"
+                        id="userName"
+                        value={userName}
+                        onChange={(e) => setUserName(e.target.value)} // Capture the user's name dynamically
+                        placeholder="Your name"
+                    />
+                </div>
+            )}
+
             <h1 className="quiz-title">Welcome to the Quiz</h1>
             {!submitted && timer > 0 && <p className="timer">Time Remaining: {timer}s</p>}
 
@@ -148,7 +162,11 @@ const QuizPage = () => {
             )}
 
             {!submitted && !isLoading && (
-                <button className="submit-button" onClick={handleSubmit}>
+                <button
+                    className="submit-button"
+                    onClick={handleSubmit}
+                    disabled={!userName} // Disable submission if user name is not entered
+                >
                     Submit Answers
                 </button>
             )}
