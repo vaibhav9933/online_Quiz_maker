@@ -1,0 +1,28 @@
+{
+  "name": "online-quiz-maker-backend",
+  "version": "1.0.0",
+  "description": "Backend for Online Quiz Maker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"No tests specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.6.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.41.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-node": "^11.1.0",
+    "nodemon": "^2.0.22"
+  }
+}
